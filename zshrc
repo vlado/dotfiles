@@ -112,6 +112,9 @@ alias kill3000="kill -9 \$(lsof -i tcp:3000 -t)"
 # Kill stale Ember server
 alias kill4200="kill -9 \$(lsof -i tcp:4200 -t)"
 
+# http://mikeballou.com/blog/2011/07/18/zsh-and-rake-parameters/
+alias rake='noglob rake'
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"

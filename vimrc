@@ -28,6 +28,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'merlinrebrovic/focus.vim'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'dense-analysis/ale'
+Plugin 'slim-template/vim-slim.git'
 
 call vundle#end() " required
 filetype plugin indent on " required
@@ -114,7 +117,7 @@ nnoremap <leader>wtf oputs "#" * 90<c-m>puts caller<c-m>puts "#" * 90<esc>"
 " hint to keep lines short
 if exists('+colorcolumn')
   highlight ColorColumn  ctermbg=237
-  set colorcolumn=80
+  set colorcolumn=120
 endif
 
 " Changes Ruby 1.9 hash rocket (=>) syntax to new columns syntax (:)
@@ -131,3 +134,12 @@ nmap 0 ^
 command! Q q " Bind :Q to :q
 command! Qall qall " Bind :Qall to qall
 command! QA qall
+
+" Configure ALE linters
+let g:ale_linters = {
+      \   'ruby': ['rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+
+" Disable ALE highlighting
+let g:ale_set_highlights = 0
